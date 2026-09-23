@@ -1,0 +1,24 @@
+Candidate: David Kim
+Title: Senior Frontend Engineer
+Email: david.kim@example.com
+Phone: +1 (555) 456-7890
+Location: New York, NY
+
+PROFESSIONAL SUMMARY
+Creative and detail-oriented Frontend Engineer with 7 years of experience building accessible, responsive, and performant web applications using React, Next.js, and TypeScript. Passionate about design systems and state management.
+
+CORE SKILLS
+- Frontend: React, Next.js, TypeScript, JavaScript, HTML5, CSS3, TailwindCSS, Redux Toolkit
+- UI/UX & Testing: Figma, Storybook, Jest, Cypress, Webpack, Vite
+- Tooling: Git, Node.js, WebSockets, REST APIs
+
+EXPERIENCE
+Senior Frontend Developer | Nova Creative Tech (2021 - Present)
+- Led frontend redesign for flagship SaaS product improving Core Web Vitals scores by 40%.
+- Created modular UI component library in React/TypeScript adopted across 5 product squads.
+
+Web Developer | PixelCraft Studio (2018 - 2021)
+- Developed responsive e-commerce web applications and interactive dashboards.
+
+EDUCATION
+B.S. in Graphic Design & Interactive Media | NYU (2018)

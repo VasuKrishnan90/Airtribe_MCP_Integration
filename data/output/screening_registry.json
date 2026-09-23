@@ -1,0 +1,76 @@
+{
+  "alex_rivers": {
+    "candidate_name": "Alex Rivers",
+    "role": "Senior AI / Agent Systems Engineer",
+    "score": 88.0,
+    "recommendation": "Strongly Recommend",
+    "strengths": [
+      "Direct skills match: langchain, aws, gcp",
+      "Strong experience: 6 years (required: 4)"
+    ],
+    "gaps": [
+      "Missing critical skills: transformers"
+    ],
+    "evaluated_timestamp": 1790173412.2149673,
+    "registry_id": "REC-1790173412-alex_r"
+  },
+  "david_kim": {
+    "candidate_name": "David Kim",
+    "role": "Senior AI / Agent Systems Engineer",
+    "score": 30.0,
+    "recommendation": "Reject",
+    "strengths": [
+      "General engineering background",
+      "Strong experience: 7 years (required: 4)"
+    ],
+    "gaps": [
+      "Missing critical skills: langgraph, python, fastmcp"
+    ],
+    "evaluated_timestamp": 1790173412.2298524,
+    "registry_id": "REC-1790173412-david_"
+  },
+  "marcus_vance": {
+    "candidate_name": "Marcus Vance",
+    "role": "Senior AI / Agent Systems Engineer",
+    "score": 33.0,
+    "recommendation": "Reject",
+    "strengths": [
+      "Direct skills match: aws, docker, kubernetes"
+    ],
+    "gaps": [
+      "Missing critical skills: langgraph, fastmcp, pytorch"
+    ],
+    "evaluated_timestamp": 1790173412.2419689,
+    "registry_id": "REC-1790173412-marcus"
+  },
+  "priya_sharma": {
+    "candidate_name": "Priya Sharma",
+    "role": "Senior AI / Agent Systems Engineer",
+    "score": 85.2,
+    "recommendation": "Strongly Recommend",
+    "strengths": [
+      "Direct skills match: mcp, langchain, aws",
+      "Strong experience: 5 years (required: 4)"
+    ],
+    "gaps": [
+      "Missing critical skills: fastmcp, transformers"
+    ],
+    "evaluated_timestamp": 1790173412.2524903,
+    "registry_id": "REC-1790173412-priya_"
+  },
+  "sarah_chen": {
+    "candidate_name": "Sarah Chen",
+    "role": "Senior AI / Agent Systems Engineer",
+    "score": 69.9,
+    "recommendation": "Proceed to Interview",
+    "strengths": [
+      "Direct skills match: langchain, python, mcp",
+      "Strong experience: 4 years (required: 4)"
+    ],
+    "gaps": [
+      "Missing critical skills: fastmcp"
+    ],
+    "evaluated_timestamp": 1790173412.2698374,
+    "registry_id": "REC-1790173412-sarah_"
+  }
+}

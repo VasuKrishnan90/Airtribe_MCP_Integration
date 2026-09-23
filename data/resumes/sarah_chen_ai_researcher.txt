@@ -1,0 +1,26 @@
+Candidate: Sarah Chen
+Title: AI Research Scientist & Agent Systems
+Email: sarah.chen@example.com
+Phone: +1 (555) 567-8901
+Location: Boston, MA
+
+PROFESSIONAL SUMMARY
+Ph.D. specializing in Generative AI, Multi-Agent Systems, and Reasoning with 4+ years of industry research and productization experience. Published author in NeurIPS/ICLR with hands-on expertise building autonomous agents, Model Context Protocol implementations, and LangGraph workflows.
+
+CORE SKILLS
+- Machine Learning: PyTorch, JAX, Hugging Face, Transformers, Fine-Tuning (LoRA, QLoRA)
+- Agent Frameworks: LangGraph, LangChain, MCP (Model Context Protocol), AutoGen, LlamaIndex
+- Programming: Python, C++, SQL
+- Domain: LLM Reasoning, Tool Integration, JSON-RPC, Multi-Agent Orchestration
+
+EXPERIENCE
+Research Scientist | DeepMind / Frontier AI Lab (2022 - Present)
+- Formulated novel architectures for standardized agent-tool communication protocols (MCP).
+- Developed self-correcting agent reflection loops using LangGraph reducing task failures by 38%.
+
+AI Researcher | Horizon Labs (2020 - 2022)
+- Researched grounded tool use and contextual retrieval mechanisms for generative models.
+
+EDUCATION
+Ph.D. in Artificial Intelligence | MIT (2020)
+B.S. in Computer Science & Applied Mathematics | MIT (2016)

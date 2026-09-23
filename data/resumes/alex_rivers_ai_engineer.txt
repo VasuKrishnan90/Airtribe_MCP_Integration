@@ -1,0 +1,28 @@
+Candidate: Alex Rivers
+Title: Senior AI / Machine Learning Engineer
+Email: alex.rivers@example.com
+Phone: +1 (555) 234-5678
+Location: San Francisco, CA
+
+PROFESSIONAL SUMMARY
+Experienced AI/ML Engineer with 6+ years specializing in Large Language Models (LLMs), Model Context Protocol (MCP), LangGraph, LangChain, and production agentic workflows. Proven track record of architecting scalable retrieval-augmented generation (RAG) pipelines and fine-tuning transformer models.
+
+CORE SKILLS
+- Programming: Python, TypeScript, SQL, Bash
+- AI & Frameworks: LangGraph, LangChain, MCP (Model Context Protocol), PyTorch, Hugging Face, OpenAI API, Gemini API, FastMCP
+- Architecture & Cloud: Docker, Kubernetes, AWS (SageMaker, ECS), GCP (Vertex AI), Vector DBs (Chroma, Pinecone, Qdrant)
+- Systems: Linux, REST APIs, JSON-RPC, AsyncIO, WebSockets
+
+EXPERIENCE
+Staff AI Engineer | Apex Intelligence (2022 - Present)
+- Designed and deployed enterprise multi-agent architectures using LangGraph and MCP servers.
+- Built context-aware tool-calling agents that cut document processing time by 65%.
+- Implemented high-throughput streaming evaluation pipelines handling 1M+ daily tokens.
+
+Senior ML Engineer | CloudScale Systems (2019 - 2022)
+- Built automated resume parsing and candidate matching engines using semantic similarity and vector search.
+- Fine-tuned transformer models for domain-specific NLP extraction with 94% precision.
+
+EDUCATION
+M.S. in Computer Science | Stanford University (2019)
+B.S. in Software Engineering | UC Berkeley (2017)

@@ -1,0 +1,165 @@
+[
+  {
+    "name": "Alex Rivers",
+    "filename": "alex_rivers_ai_engineer.txt",
+    "current_title": "Senior AI / Machine Learning Engineer",
+    "email": "alex.rivers@example.com",
+    "experience_years": 6,
+    "matched_skills": [
+      "langchain",
+      "aws",
+      "gcp",
+      "python",
+      "langgraph",
+      "mcp",
+      "docker",
+      "kubernetes",
+      "json-rpc"
+    ],
+    "missing_skills": [
+      "mlops",
+      "vector databases"
+    ],
+    "market_relevance_score": 85.7,
+    "composite_score": 88.0,
+    "recommendation": "Strongly Recommend",
+    "registry_id": "REC-1790173412-alex_r",
+    "strengths": [
+      "Direct skills match: langchain, aws, gcp",
+      "Strong experience: 6 years (required: 4)"
+    ],
+    "gaps": [
+      "Missing critical skills: transformers"
+    ]
+  },
+  {
+    "name": "Priya Sharma",
+    "filename": "priya_sharma_ml_ops.txt",
+    "current_title": "Lead MLOps & Platform Engineer",
+    "email": "priya.sharma@example.com",
+    "experience_years": 5,
+    "matched_skills": [
+      "mcp",
+      "langchain",
+      "aws",
+      "gcp",
+      "python",
+      "mlops",
+      "docker",
+      "kubernetes",
+      "langgraph"
+    ],
+    "missing_skills": [
+      "vector databases",
+      "json-rpc"
+    ],
+    "market_relevance_score": 71.4,
+    "composite_score": 85.2,
+    "recommendation": "Strongly Recommend",
+    "registry_id": "REC-1790173412-priya_",
+    "strengths": [
+      "Direct skills match: mcp, langchain, aws",
+      "Strong experience: 5 years (required: 4)"
+    ],
+    "gaps": [
+      "Missing critical skills: fastmcp, transformers"
+    ]
+  },
+  {
+    "name": "Sarah Chen",
+    "filename": "sarah_chen_ai_researcher.txt",
+    "current_title": "AI Research Scientist & Agent Systems",
+    "email": "sarah.chen@example.com",
+    "experience_years": 4,
+    "matched_skills": [
+      "langchain",
+      "python",
+      "mcp",
+      "json-rpc",
+      "langgraph"
+    ],
+    "missing_skills": [
+      "aws",
+      "docker",
+      "gcp",
+      "mlops",
+      "vector databases",
+      "kubernetes"
+    ],
+    "market_relevance_score": 85.7,
+    "composite_score": 69.9,
+    "recommendation": "Proceed to Interview",
+    "registry_id": "REC-1790173412-sarah_",
+    "strengths": [
+      "Direct skills match: langchain, python, mcp",
+      "Strong experience: 4 years (required: 4)"
+    ],
+    "gaps": [
+      "Missing critical skills: fastmcp"
+    ]
+  },
+  {
+    "name": "Marcus Vance",
+    "filename": "marcus_vance_devops.json",
+    "current_title": "Cloud Infrastructure & Systems Engineer",
+    "email": "marcus.vance@example.com",
+    "experience_years": 0,
+    "matched_skills": [
+      "aws",
+      "docker",
+      "kubernetes",
+      "python"
+    ],
+    "missing_skills": [
+      "mcp",
+      "langchain",
+      "gcp",
+      "langgraph",
+      "mlops",
+      "vector databases",
+      "json-rpc"
+    ],
+    "market_relevance_score": 14.3,
+    "composite_score": 33.0,
+    "recommendation": "Reject",
+    "registry_id": "REC-1790173412-marcus",
+    "strengths": [
+      "Direct skills match: aws, docker, kubernetes"
+    ],
+    "gaps": [
+      "Missing critical skills: langgraph, fastmcp, pytorch"
+    ]
+  },
+  {
+    "name": "David Kim",
+    "filename": "david_kim_frontend.txt",
+    "current_title": "Senior Frontend Engineer",
+    "email": "david.kim@example.com",
+    "experience_years": 7,
+    "matched_skills": [],
+    "missing_skills": [
+      "mcp",
+      "langchain",
+      "aws",
+      "docker",
+      "gcp",
+      "python",
+      "langgraph",
+      "mlops",
+      "vector databases",
+      "kubernetes",
+      "json-rpc"
+    ],
+    "market_relevance_score": 0.0,
+    "composite_score": 30.0,
+    "recommendation": "Reject",
+    "registry_id": "REC-1790173412-david_",
+    "strengths": [
+      "General engineering background",
+      "Strong experience: 7 years (required: 4)"
+    ],
+    "gaps": [
+      "Missing critical skills: langgraph, python, fastmcp"
+    ]
+  }
+]

@@ -1,0 +1,35 @@
+{
+  "candidate": "Marcus Vance",
+  "title": "Cloud Infrastructure & Systems Engineer",
+  "email": "marcus.vance@example.com",
+  "phone": "+1 (555) 678-9012",
+  "location": "Austin, TX",
+  "summary": "Infrastructure engineer with 5 years experience managing AWS and Linux environments, Terraform automation, and container orchestration.",
+  "skills": [
+    "AWS",
+    "Terraform",
+    "Docker",
+    "Kubernetes",
+    "Linux",
+    "Python",
+    "Bash",
+    "CI/CD",
+    "GitHub Actions"
+  ],
+  "experience": [
+    {
+      "role": "Cloud Systems Engineer",
+      "company": "Apex Cloud Works",
+      "period": "2021 - Present",
+      "highlights": [
+        "Automated multi-region infrastructure provisioning using Terraform",
+        "Managed Kubernetes clusters hosting backend services"
+      ]
+    }
+  ],
+  "education": {
+    "degree": "B.S. in Information Technology",
+    "institution": "University of Texas at Austin",
+    "year": 2020
+  }
+}

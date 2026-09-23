@@ -1,0 +1,16 @@
+Job Title: Full Stack React & Node Engineer
+Department: Product Engineering
+Location: New York, NY / Remote
+
+ROLE OVERVIEW
+We are looking for a skilled Full Stack Engineer to build high-performance web applications and delightful user interfaces.
+
+KEY RESPONSIBILITIES
+- Develop web interfaces using React, Next.js, and TypeScript.
+- Build resilient backend APIs and state management systems.
+- Maintain comprehensive unit and integration tests (Jest, Cypress).
+
+REQUIRED SKILLS
+- 3+ years experience with React, TypeScript, Next.js, and CSS/Tailwind.
+- Strong knowledge of responsive web design, accessibility (WCAG), and modern UI patterns.
+- Experience with REST APIs and Node.js.

@@ -1,0 +1,25 @@
+Job Title: Senior AI / Agent Systems Engineer
+Department: Applied AI Engineering
+Location: Remote (US / Global)
+Employment Type: Full-time
+
+ROLE OVERVIEW
+We are seeking an experienced Senior AI Engineer to spearhead our next-generation autonomous agent systems. You will lead the transition from ad-hoc agent tools to standardized architectures using Model Context Protocol (MCP), LangGraph, and modern LLM orchestration.
+
+KEY RESPONSIBILITIES
+- Architect and deploy production-grade agent workflows using LangGraph and LangChain.
+- Implement standardized, JSON-RPC 2.0 compliant MCP servers to connect LLMs with internal file systems, databases, and APIs.
+- Design high-performance batch processing and real-time event-monitoring systems for candidate intelligence.
+- Benchmark and optimize agent reasoning, tool selection latency, and evaluation frameworks.
+
+REQUIRED QUALIFICATIONS & SKILLS
+- 4+ years of software engineering experience with strong proficiency in Python.
+- Proven experience building LLM applications, agentic systems (LangGraph / LangChain), and tool-use workflows.
+- Hands-on familiarity with Anthropic Model Context Protocol (MCP) and JSON-RPC protocols.
+- Experience with cloud platforms (AWS or GCP), containerization (Docker/Kubernetes), and vector databases.
+- Strong problem-solving skills and passion for AI system reliability and safety.
+
+PREFERRED QUALIFICATIONS
+- Experience with MLOps pipelines (Ray, Kubeflow, Triton).
+- Contributions to open-source agent or MCP tooling.
+- Advanced degree (M.S. or Ph.D.) in Computer Science, AI, or related field.

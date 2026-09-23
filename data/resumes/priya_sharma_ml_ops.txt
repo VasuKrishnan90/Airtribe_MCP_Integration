@@ -1,0 +1,27 @@
+Candidate: Priya Sharma
+Title: Lead MLOps & Platform Engineer
+Email: priya.sharma@example.com
+Phone: +1 (555) 345-6789
+Location: Seattle, WA
+
+PROFESSIONAL SUMMARY
+5+ years designing and running robust MLOps infrastructure, model serving systems, and agent deployment pipelines. Deep expertise in continuous integration/continuous deployment for ML, model monitoring, and scalable inference infrastructure using Kubernetes and Ray.
+
+CORE SKILLS
+- Languages: Python, Go, Bash
+- MLOps & Orchestration: Kubeflow, MLflow, Ray, Docker, Kubernetes, Terraform, Airflow
+- Agentic Systems & Protocols: MCP (Model Context Protocol), LangChain, LangGraph, FastAPI, gRPC
+- Cloud Platforms: GCP (GKE, Vertex AI), AWS (EKS, CloudWatch)
+
+EXPERIENCE
+Lead MLOps Engineer | DataPulse Labs (2021 - Present)
+- Architected standardized MCP server hosting platform supporting internal engineering agents.
+- Reduced model deployment latency by 45% using optimized Triton inference servers.
+- Implemented automated CI/CD for agent evaluations and regression benchmarks.
+
+ML Infrastructure Engineer | Strata Cloud (2019 - 2021)
+- Managed Kubernetes clusters running PyTorch distributed training and inference jobs.
+- Integrated automated data drift and model performance monitoring alerting.
+
+EDUCATION
+B.Tech in Computer Science | Indian Institute of Technology (IIT) Delhi (2019)

@@ -1,0 +1,32 @@
+# Filesystem MCP Server Configuration
+
+server:
+  name: "filesystem-mcp-server"
+  version: "1.0.0"
+  description: "JSON-RPC 2.0 Compliant Filesystem MCP Server for Resume & Job Description Processing"
+
+storage:
+  sandbox_root: "."
+  resumes_dir: "data/resumes"
+  jobs_dir: "data/jobs"
+  output_dir: "data/output"
+  allowed_extensions:
+    - ".txt"
+    - ".md"
+    - ".json"
+    - ".pdf"
+    - ".csv"
+  max_file_size_mb: 10
+
+capabilities:
+  watch_directory:
+    default_poll_interval: 1.0
+    default_duration: 10
+  batch_process:
+    max_batch_size: 50
+    default_concurrency: 5
+
+secondary_server:
+  name: "market-intelligence-mcp-server"
+  version: "1.0.0"
+  description: "Market Intelligence, Salary Benchmarking, and Screening Registry MCP Server"
