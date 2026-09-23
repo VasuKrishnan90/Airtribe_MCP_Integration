@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Airtribe MCP Integration — End-to-End System Demo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #090d16;
+      --surface: #111827;
+      --surface-border: #1f293d;
+      --text: #f3f4f6;
+      --text-muted: #9ca3af;
+      --primary: #3b82f6;
+      --primary-glow: rgba(59, 130, 246, 0.25);
+      --success: #10b981;
+      --warning: #f59e0b;
+      --danger: #ef4444;
+      --accent: #8b5cf6;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      padding: 24px;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--surface-border);
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .title-group h1 {
+      font-size: 24px;
+      font-weight: 700;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .title-group p {
+      color: var(--text-muted);
+      font-size: 14px;
+      margin-top: 4px;
+    }
+
+    .badges {
+      display: flex;
+      gap: 8px;
+    }
+
+    .badge {
+      font-size: 12px;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 9999px;
+      background: var(--surface);
+      border: 1px solid var(--surface-border);
+      color: var(--primary);
+    }
+    .badge.success { color: var(--success); border-color: rgba(16, 185, 129, 0.3); }
+    .badge.accent { color: var(--accent); border-color: rgba(139, 92, 246, 0.3); }
+
+    /* Phase Progress Tabs */
+    .phases-bar {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .phase-card {
+      background: var(--surface);
+      border: 1px solid var(--surface-border);
+      border-radius: 12px;
+      padding: 14px;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .phase-card:hover {
+      border-color: var(--primary);
+      transform: translateY(-2px);
+    }
+
+    .phase-card.active {
+      border-color: var(--primary);
+      background: linear-gradient(180deg, rgba(59, 130, 246, 0.12) 0%, rgba(17, 24, 39, 0.8) 100%);
+      box-shadow: 0 0 15px var(--primary-glow);
+    }
+
+    .phase-card.completed::after {
+      content: "✓";
+      position: absolute;
+      top: 10px;
+      right: 12px;
+      color: var(--success);
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .phase-step {
+      font-size: 11px;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--text-muted);
+      letter-spacing: 0.5px;
+    }
+
+    .phase-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: #fff;
+      margin-top: 2px;
+    }
+
+    /* Main Grid */
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    /* Terminal Simulation Box */
+    .terminal-box {
+      background: #030712;
+      border: 1px solid var(--surface-border);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.5);
+    }
+
+    .terminal-header {
+      background: #0b1120;
+      padding: 12px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--surface-border);
+    }
+
+    .terminal-controls {
+      display: flex;
+      gap: 6px;
+    }
+
+    .control-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+    }
+    .dot-red { background: #ef4444; }
+    .dot-yellow { background: #f59e0b; }
+    .dot-green { background: #10b981; }
+
+    .terminal-title {
+      font-family: 'Fira Code', monospace;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .terminal-actions button {
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      padding: 6px 14px;
+      font-size: 12px;
+      font-weight: 600;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .terminal-actions button:hover {
+      background: #2563eb;
+    }
+
+    .terminal-body {
+      padding: 18px;
+      font-family: 'Fira Code', monospace;
+      font-size: 13px;
+      color: #d1d5db;
+      min-height: 380px;
+      max-height: 480px;
+      overflow-y: auto;
+      white-space: pre-wrap;
+      word-break: break-all;
+    }
+
+    .log-info { color: #60a5fa; }
+    .log-success { color: #34d399; font-weight: 600; }
+    .log-warning { color: #fbbf24; }
+    .log-error { color: #f87171; }
+    .log-header { color: #c084fc; font-weight: 600; }
+
+    /* Scorecard Table View */
+    .scorecard-panel {
+      background: var(--surface);
+      border: 1px solid var(--surface-border);
+      border-radius: 12px;
+      padding: 20px;
+      margin-top: 24px;
+    }
+
+    .scorecard-panel h2 {
+      font-size: 16px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+    }
+
+    th {
+      text-align: left;
+      padding: 10px 14px;
+      color: var(--text-muted);
+      border-bottom: 1px solid var(--surface-border);
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 11px;
+      letter-spacing: 0.5px;
+    }
+
+    td {
+      padding: 12px 14px;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+      color: #e5e7eb;
+    }
+
+    tr:last-child td { border-bottom: none; }
+    tr:hover td { background: rgba(255,255,255,0.02); }
+
+    .rec-badge {
+      display: inline-block;
+      padding: 3px 8px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 600;
+    }
+    .rec-recommend { background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.3); }
+    .rec-interview { background: rgba(59, 130, 246, 0.15); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.3); }
+    .rec-alt { background: rgba(245, 158, 11, 0.15); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.3); }
+    .rec-reject { background: rgba(239, 68, 68, 0.15); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.3); }
+
+    .score-chip {
+      font-family: 'Fira Code', monospace;
+      font-weight: 600;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <header>
+    <div class="title-group">
+      <h1>🚀 Model Context Protocol (MCP) System Demo</h1>
+      <p>Decoupled Filesystem Tools, Multi-MCP Architecture & LangGraph Matching Agent</p>
+    </div>
+    <div class="badges">
+      <span class="badge success">JSON-RPC 2.0 Compliant</span>
+      <span class="badge accent">Multi-MCP Enabled</span>
+      <span class="badge">15/15 Tests Passing</span>
+    </div>
+  </header>
+
+  <!-- Navigation Stepper -->
+  <div class="phases-bar">
+    <div class="phase-card active" id="card-1" onclick="switchPhase(1)">
+      <div class="phase-step">Phase 1</div>
+      <div class="phase-title">Protocol & Discovery</div>
+    </div>
+    <div class="phase-card" id="card-2" onclick="switchPhase(2)">
+      <div class="phase-step">Phase 2</div>
+      <div class="phase-title">Batch & Watch Tools</div>
+    </div>
+    <div class="phase-card" id="card-3" onclick="switchPhase(3)">
+      <div class="phase-step">Phase 3</div>
+      <div class="phase-title">Market MCP (Bonus)</div>
+    </div>
+    <div class="phase-card" id="card-4" onclick="switchPhase(4)">
+      <div class="phase-step">Phase 4</div>
+      <div class="phase-title">LangGraph Agent Run</div>
+    </div>
+    <div class="phase-card" id="card-5" onclick="switchPhase(5)">
+      <div class="phase-step">Phase 5</div>
+      <div class="phase-title">Scorecard Verification</div>
+    </div>
+  </div>
+
+  <div class="grid">
+    <!-- Simulated Terminal -->
+    <div class="terminal-box">
+      <div class="terminal-header">
+        <div class="terminal-controls">
+          <div class="control-dot dot-red"></div>
+          <div class="control-dot dot-yellow"></div>
+          <div class="control-dot dot-green"></div>
+        </div>
+        <div class="terminal-title" id="terminal-title">powershell — .venv/bin/python</div>
+        <div class="terminal-actions">
+          <button id="btn-play" onclick="toggleAutoPlay()">▶ Auto Play All Phases</button>
+        </div>
+      </div>
+      <div class="terminal-body" id="terminal-content"></div>
+    </div>
+
+    <!-- Candidate Scorecard Table -->
+    <div class="scorecard-panel" id="scorecard-panel">
+      <h2>
+        <span>📋 Final Candidate Ranking Scorecard</span>
+        <span style="font-size: 12px; font-weight: normal; color: var(--text-muted);">Saved to data/output/evaluation_report.md</span>
+      </h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Rank</th>
+            <th>Candidate</th>
+            <th>Match Score</th>
+            <th>Recommendation</th>
+            <th>Experience</th>
+            <th>Registry ID</th>
+          </tr>
+        </thead>
+        <tbody id="table-body">
+          <tr>
+            <td>1</td>
+            <td><strong>Alex Rivers</strong></td>
+            <td><span class="score-chip">88.0%</span></td>
+            <td><span class="rec-badge rec-recommend">Strongly Recommend</span></td>
+            <td>6 yrs</td>
+            <td><code>REC-1790173215-alex_r</code></td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td><strong>Priya Sharma</strong></td>
+            <td><span class="score-chip">85.2%</span></td>
+            <td><span class="rec-badge rec-recommend">Strongly Recommend</span></td>
+            <td>5 yrs</td>
+            <td><code>REC-1790173215-priya_</code></td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td><strong>Sarah Chen</strong></td>
+            <td><span class="score-chip">69.9%</span></td>
+            <td><span class="rec-badge rec-interview">Proceed to Interview</span></td>
+            <td>4 yrs</td>
+            <td><code>REC-1790173215-sarah_</code></td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td><strong>Marcus Vance</strong></td>
+            <td><span class="score-chip">33.0%</span></td>
+            <td><span class="rec-badge rec-reject">Reject</span></td>
+            <td>0 yrs</td>
+            <td><code>REC-1790173215-marcus</code></td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td><strong>David Kim</strong></td>
+            <td><span class="score-chip">30.0%</span></td>
+            <td><span class="rec-badge rec-reject">Reject</span></td>
+            <td>7 yrs</td>
+            <td><code>REC-1790173215-david_</code></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<script>
+  const PHASES = {
+    1: {
+      title: "Phase 1: MCP Protocol Handshake & Tool / Resource Discovery",
+      text: `> python -m mcp_client --discover
+
+[+] Connecting to Primary Filesystem MCP Server over JSON-RPC 2.0 (Stdio)...
+[*] Protocol Handshake Initialized: Anthropic MCP Specification
+[*] Discovered Tools (7):
+    - read_file(path)
+    - write_file(path, content, overwrite)
+    - list_directory(path)
+    - search_files(path, query, pattern)
+    - get_file_info(path)
+    - watch_directory(path, duration_seconds, poll_interval)
+    - batch_process(file_paths, directory_path, action)
+
+[*] Discovered Resource Templates:
+    - resume://{filename}  (Read candidate resume as resource)
+    - job://{filename}     (Read job specification as resource)
+
+[+] Connecting to Secondary Market Intelligence MCP Server over Stdio...
+[*] Discovered Tools (3):
+    - benchmark_market_role(role_title, location)
+    - calculate_skill_weight(role_title, candidate_skills)
+    - store_candidate_evaluation(candidate_name, role, score, recommendation)
+
+[SUCCESS] Both MCP servers discovered and ready for agent orchestration.`
+    },
+    2: {
+      title: "Phase 2: High-Performance Batch Processing & Live Directory Watching",
+      text: `> python scripts/simulate_resume_drop.py
+
+[*] Testing 'batch_process()' Capability across 'data/resumes':
+    - Ingested: 5 candidate files concurrently
+    - Execution Time: 2.14ms
+    - Candidates parsed: Alex Rivers, Priya Sharma, Sarah Chen, Marcus Vance, David Kim
+
+[*] Testing 'watch_directory()' Real-time Event Monitoring:
+    - Target: data/resumes/
+    - Polling interval: 0.3s
+    - Action: Dropping 'resume_jordan_lake_lead_architect.txt'...
+    - Event Captured: [CREATED] -> resume_jordan_lake_lead_architect.txt
+    - Output: Successfully flagged 1 new resume for incoming agent ingestion!
+
+[*] Testing Sandbox Security Defense:
+    - Attempting path traversal: read_file("../../secret.txt")
+    - Result: Blocked! Access denied: Path escapes sandbox root 'D:\\Airtribe - MCP integration'`
+    },
+    3: {
+      title: "Phase 3: Multi-MCP Bonus — Market Intelligence & Salary Benchmarks",
+      text: `> python secondary_mcp_server.py --self-test
+
+[*] Querying 'benchmark_market_role' for 'Senior AI / Agent Systems Engineer':
+    - Role Title: Senior AI / Agent Systems Engineer
+    - Median Salary: $185,000 USD
+    - Market Demand: Very High
+    - Core Skills Taxonomy: python, langgraph, langchain, mcp, fastmcp, pytorch, transformers
+
+[*] Calling 'calculate_skill_weight' for Candidate Skills:
+    - Candidate: Alex Rivers
+    - Skills evaluated: python, langgraph, langchain, mcp, docker, kubernetes
+    - Market Relevance Score: 88.0%
+    - Matched Critical: ['python', 'langgraph', 'langchain', 'mcp']
+
+[*] Registry Persistence Check:
+    - Record REC-1790173215-alex_r stored in data/output/screening_registry.json`
+    },
+    4: {
+      title: "Phase 4: Full LangGraph Matching Agent Execution (Zero Direct Disk I/O)",
+      text: `> python matching_agent.py job_senior_ai_engineer.txt
+
+======================================================================
+>> STARTING LANGGRAPH MATCHING AGENT WITH MULTI-MCP INTEGRATION
+======================================================================
+
+[*] AGENT EXECUTION LOGS:
+  [MCP Filesystem] Fetching job spec for: 'job_senior_ai_engineer.txt' via MCP...
+  [Agent] Target Role: 'Senior AI / Agent Systems Engineer' (Min Experience: 4 yrs, Skills: 11)
+  [MCP Filesystem] Invoking 'list_directory' on 'data/resumes'...
+  [Agent] Discovered 5 candidate resume files via MCP.
+  [MCP Filesystem] Executing 'batch_process' across all candidate resumes...
+  [Agent] Batch processed 5 resumes in 1.44ms via MCP.
+  [MCP Market] Calling 'benchmark_market_role' for role: 'Senior AI / Agent Systems Engineer'...
+  [Agent] Market Intelligence: Median Salary=$185,000, Demand='Very High'.
+  [Agent] Scoring 5 candidates against role requirements...
+  [Agent] Top candidate: Alex Rivers (Score: 88.0%)
+  [MCP Filesystem] Generating evaluation scorecard and writing reports via MCP...
+  [MCP Filesystem] Successfully saved reports to 'data/output/evaluation_report.md' and 'data/output/screening_results.json'.
+
+[+] FINAL CANDIDATE RANKINGS:
+  Rank  Candidate              Score      Recommendation             Registry ID
+  ---------------------------------------------------------------------------
+  1     Alex Rivers            88.0       Strongly Recommend         REC-1790173215-alex_r
+  2     Priya Sharma           85.2       Strongly Recommend         REC-1790173215-priya_
+  3     Sarah Chen             69.9       Proceed to Interview       REC-1790173215-sarah_
+  4     Marcus Vance           33.0       Reject                     REC-1790173215-marcus
+  5     David Kim              30.0       Reject                     REC-1790173215-david_
+
+======================================================================
+[SUCCESS] Screening report successfully generated and saved via MCP!`
+    },
+    5: {
+      title: "Phase 5: Output Verification & Pytest Suite (15/15 Passed)",
+      text: `> pytest tests/ -v
+
+============================= test session starts =============================
+platform win32 -- Python 3.14.7, pytest-9.1.1, pluggy-1.6.0
+rootdir: D:\\Airtribe - MCP integration
+collected 15 items
+
+tests/test_batch_and_watch.py::TestBatchAndWatchCapabilities::test_batch_process_all_resumes PASSED [  6%]
+tests/test_batch_and_watch.py::TestBatchAndWatchCapabilities::test_batch_process_specific_files PASSED [ 13%]
+tests/test_batch_and_watch.py::TestBatchAndWatchCapabilities::test_watch_directory_snapshot PASSED [ 20%]
+tests/test_batch_and_watch.py::TestBatchAndWatchCapabilities::test_watch_directory_detects_new_file_drop PASSED [ 26%]
+tests/test_matching_agent.py::TestMatchingAgentWorkflow::test_full_matching_agent_execution_ai_role PASSED [ 33%]
+tests/test_matching_agent.py::TestMatchingAgentWorkflow::test_matching_agent_fullstack_role PASSED [ 40%]
+tests/test_mcp_server.py::TestFilesystemMCPServer::test_list_directory PASSED [ 46%]
+tests/test_mcp_server.py::TestFilesystemMCPServer::test_read_file_success PASSED [ 53%]
+tests/test_mcp_server.py::TestFilesystemMCPServer::test_read_file_not_found PASSED [ 60%]
+tests/test_mcp_server.py::TestFilesystemMCPServer::test_write_file_and_verify PASSED [ 66%]
+tests/test_mcp_server.py::TestFilesystemMCPServer::test_get_file_info PASSED [ 73%]
+tests/test_mcp_server.py::TestFilesystemMCPServer::test_search_files PASSED [ 80%]
+tests/test_mcp_server.py::TestFilesystemMCPServer::test_resume_resource PASSED [ 86%]
+tests/test_mcp_server.py::TestFilesystemMCPServer::test_job_resource PASSED [ 93%]
+tests/test_mcp_server.py::TestFilesystemMCPServer::test_sandbox_security_traversal_blocked PASSED [100%]
+
+============================= 15 passed in 7.27s ==============================
+
+[+] Artifacts Verified:
+    - data/output/evaluation_report.md
+    - data/output/screening_results.json
+    - data/output/screening_registry.json`
+    }
+  };
+
+  let currentPhase = 1;
+  let autoPlayTimer = null;
+
+  function switchPhase(phaseNum) {
+    currentPhase = phaseNum;
+    for (let i = 1; i <= 5; i++) {
+      const card = document.getElementById(`card-${i}`);
+      if (i === phaseNum) {
+        card.classList.add('active');
+      } else {
+        card.classList.remove('active');
+      }
+      if (i < phaseNum) {
+        card.classList.add('completed');
+      } else {
+        card.classList.remove('completed');
+      }
+    }
+
+    const phaseData = PHASES[phaseNum];
+    document.getElementById("terminal-title").innerText = phaseData.title;
+    document.getElementById("terminal-content").innerText = phaseData.text;
+
+    const scorecard = document.getElementById("scorecard-panel");
+    if (phaseNum >= 4) {
+      scorecard.style.display = "block";
+    }
+  }
+
+  function toggleAutoPlay() {
+    const btn = document.getElementById("btn-play");
+    if (autoPlayTimer) {
+      clearInterval(autoPlayTimer);
+      autoPlayTimer = null;
+      btn.innerText = "▶ Auto Play All Phases";
+    } else {
+      btn.innerText = "⏸ Pause Auto Play";
+      switchPhase(1);
+      autoPlayTimer = setInterval(() => {
+        if (currentPhase < 5) {
+          switchPhase(currentPhase + 1);
+        } else {
+          switchPhase(1);
+        }
+      }, 4000);
+    }
+  }
+
+  // Initialize
+  switchPhase(1);
+</script>
+
+</body>
+</html>

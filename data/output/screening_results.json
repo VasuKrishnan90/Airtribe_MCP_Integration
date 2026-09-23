@@ -6,26 +6,26 @@
     "email": "alex.rivers@example.com",
     "experience_years": 6,
     "matched_skills": [
-      "langchain",
-      "aws",
-      "gcp",
-      "python",
       "langgraph",
-      "mcp",
-      "docker",
+      "langchain",
       "kubernetes",
-      "json-rpc"
+      "aws",
+      "mcp",
+      "json-rpc",
+      "gcp",
+      "docker",
+      "python"
     ],
     "missing_skills": [
-      "mlops",
-      "vector databases"
+      "vector databases",
+      "mlops"
     ],
     "market_relevance_score": 85.7,
     "composite_score": 88.0,
     "recommendation": "Strongly Recommend",
-    "registry_id": "REC-1790173412-alex_r",
+    "registry_id": "REC-1790174375-alex_r",
     "strengths": [
-      "Direct skills match: langchain, aws, gcp",
+      "Direct skills match: langgraph, langchain, kubernetes",
       "Strong experience: 6 years (required: 4)"
     ],
     "gaps": [
@@ -39,15 +39,15 @@
     "email": "priya.sharma@example.com",
     "experience_years": 5,
     "matched_skills": [
-      "mcp",
+      "langgraph",
       "langchain",
+      "kubernetes",
       "aws",
+      "mcp",
       "gcp",
-      "python",
       "mlops",
       "docker",
-      "kubernetes",
-      "langgraph"
+      "python"
     ],
     "missing_skills": [
       "vector databases",
@@ -56,9 +56,9 @@
     "market_relevance_score": 71.4,
     "composite_score": 85.2,
     "recommendation": "Strongly Recommend",
-    "registry_id": "REC-1790173412-priya_",
+    "registry_id": "REC-1790174375-priya_",
     "strengths": [
-      "Direct skills match: mcp, langchain, aws",
+      "Direct skills match: langgraph, langchain, kubernetes",
       "Strong experience: 5 years (required: 4)"
     ],
     "gaps": [
@@ -72,26 +72,26 @@
     "email": "sarah.chen@example.com",
     "experience_years": 4,
     "matched_skills": [
+      "langgraph",
       "langchain",
-      "python",
       "mcp",
       "json-rpc",
-      "langgraph"
+      "python"
     ],
     "missing_skills": [
+      "kubernetes",
       "aws",
-      "docker",
+      "vector databases",
       "gcp",
       "mlops",
-      "vector databases",
-      "kubernetes"
+      "docker"
     ],
     "market_relevance_score": 85.7,
     "composite_score": 69.9,
     "recommendation": "Proceed to Interview",
-    "registry_id": "REC-1790173412-sarah_",
+    "registry_id": "REC-1790174375-sarah_",
     "strengths": [
-      "Direct skills match: langchain, python, mcp",
+      "Direct skills match: langgraph, langchain, mcp",
       "Strong experience: 4 years (required: 4)"
     ],
     "gaps": [
@@ -105,29 +105,29 @@
     "email": "marcus.vance@example.com",
     "experience_years": 0,
     "matched_skills": [
-      "aws",
-      "docker",
       "kubernetes",
-      "python"
+      "docker",
+      "python",
+      "aws"
     ],
     "missing_skills": [
-      "mcp",
-      "langchain",
-      "gcp",
       "langgraph",
-      "mlops",
+      "langchain",
+      "mcp",
       "vector databases",
-      "json-rpc"
+      "gcp",
+      "json-rpc",
+      "mlops"
     ],
     "market_relevance_score": 14.3,
     "composite_score": 33.0,
     "recommendation": "Reject",
-    "registry_id": "REC-1790173412-marcus",
+    "registry_id": "REC-1790174375-marcus",
     "strengths": [
-      "Direct skills match: aws, docker, kubernetes"
+      "Direct skills match: kubernetes, docker, python"
     ],
     "gaps": [
-      "Missing critical skills: langgraph, fastmcp, pytorch"
+      "Missing critical skills: langchain, langgraph, pytorch"
     ]
   },
   {
@@ -138,28 +138,28 @@
     "experience_years": 7,
     "matched_skills": [],
     "missing_skills": [
-      "mcp",
-      "langchain",
-      "aws",
-      "docker",
-      "gcp",
-      "python",
       "langgraph",
-      "mlops",
-      "vector databases",
+      "langchain",
       "kubernetes",
-      "json-rpc"
+      "aws",
+      "mcp",
+      "vector databases",
+      "gcp",
+      "json-rpc",
+      "mlops",
+      "docker",
+      "python"
     ],
     "market_relevance_score": 0.0,
     "composite_score": 30.0,
     "recommendation": "Reject",
-    "registry_id": "REC-1790173412-david_",
+    "registry_id": "REC-1790174375-david_",
     "strengths": [
       "General engineering background",
       "Strong experience: 7 years (required: 4)"
     ],
     "gaps": [
-      "Missing critical skills: langgraph, python, fastmcp"
+      "Missing critical skills: langchain, langgraph, pytorch"
     ]
   }
 ]

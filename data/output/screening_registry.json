@@ -5,14 +5,14 @@
     "score": 88.0,
     "recommendation": "Strongly Recommend",
     "strengths": [
-      "Direct skills match: langchain, aws, gcp",
+      "Direct skills match: langgraph, langchain, kubernetes",
       "Strong experience: 6 years (required: 4)"
     ],
     "gaps": [
       "Missing critical skills: transformers"
     ],
-    "evaluated_timestamp": 1790173412.2149673,
-    "registry_id": "REC-1790173412-alex_r"
+    "evaluated_timestamp": 1790174375.1041217,
+    "registry_id": "REC-1790174375-alex_r"
   },
   "david_kim": {
     "candidate_name": "David Kim",
@@ -24,10 +24,10 @@
       "Strong experience: 7 years (required: 4)"
     ],
     "gaps": [
-      "Missing critical skills: langgraph, python, fastmcp"
+      "Missing critical skills: langchain, langgraph, pytorch"
     ],
-    "evaluated_timestamp": 1790173412.2298524,
-    "registry_id": "REC-1790173412-david_"
+    "evaluated_timestamp": 1790174375.1181471,
+    "registry_id": "REC-1790174375-david_"
   },
   "marcus_vance": {
     "candidate_name": "Marcus Vance",
@@ -35,13 +35,13 @@
     "score": 33.0,
     "recommendation": "Reject",
     "strengths": [
-      "Direct skills match: aws, docker, kubernetes"
+      "Direct skills match: kubernetes, docker, python"
     ],
     "gaps": [
-      "Missing critical skills: langgraph, fastmcp, pytorch"
+      "Missing critical skills: langchain, langgraph, pytorch"
     ],
-    "evaluated_timestamp": 1790173412.2419689,
-    "registry_id": "REC-1790173412-marcus"
+    "evaluated_timestamp": 1790174375.1409698,
+    "registry_id": "REC-1790174375-marcus"
   },
   "priya_sharma": {
     "candidate_name": "Priya Sharma",
@@ -49,14 +49,14 @@
     "score": 85.2,
     "recommendation": "Strongly Recommend",
     "strengths": [
-      "Direct skills match: mcp, langchain, aws",
+      "Direct skills match: langgraph, langchain, kubernetes",
       "Strong experience: 5 years (required: 4)"
     ],
     "gaps": [
       "Missing critical skills: fastmcp, transformers"
     ],
-    "evaluated_timestamp": 1790173412.2524903,
-    "registry_id": "REC-1790173412-priya_"
+    "evaluated_timestamp": 1790174375.159625,
+    "registry_id": "REC-1790174375-priya_"
   },
   "sarah_chen": {
     "candidate_name": "Sarah Chen",
@@ -64,13 +64,13 @@
     "score": 69.9,
     "recommendation": "Proceed to Interview",
     "strengths": [
-      "Direct skills match: langchain, python, mcp",
+      "Direct skills match: langgraph, langchain, mcp",
       "Strong experience: 4 years (required: 4)"
     ],
     "gaps": [
       "Missing critical skills: fastmcp"
     ],
-    "evaluated_timestamp": 1790173412.2698374,
-    "registry_id": "REC-1790173412-sarah_"
+    "evaluated_timestamp": 1790174375.1808681,
+    "registry_id": "REC-1790174375-sarah_"
   }
 }
